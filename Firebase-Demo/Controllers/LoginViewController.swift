@@ -24,6 +24,8 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var accountStateButton: UIButton!
   
   private var accountState: AccountState = .existingUser
+    
+    private var authSession = AuthenticationSession()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -31,8 +33,55 @@ class LoginViewController: UIViewController {
   }
   
   @IBAction func loginButtonPressed(_ sender: UIButton) {
-    
+    guard let email = emailTextField.text,
+        !email.isEmpty,
+        let password = passwordTextField.text,
+        !password.isEmpty else {
+            print("missing fields")
+            return
+    }
+    continueLoginFlow(email: email, password: password)
   }
+    
+    private func continueLoginFlow(email: String, password: String) {
+        if accountState == .existingUser {
+            authSession.signExistingUser(email: email, password: password) {[weak self] (result) in
+                switch result {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.errorLabel.text = "\(error.localizedDescription)"
+                        self?.errorLabel.textColor = .systemRed
+                    }
+                case .success://(let authDataResult):
+                    DispatchQueue.main.async {
+                        self?.navigateToMainView()
+//                        self?.errorLabel.textColor = .systemGreen
+//                        self?.errorLabel.text = "Welcome back user with email: \(authDataResult.user.email ?? "")"
+                    }
+                }
+            }
+        } else {
+            authSession.createNewUser(email: email, password: password) {[weak self] (result) in
+                switch result {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.errorLabel.text = "\(error.localizedDescription)"
+                        self?.errorLabel.textColor = .systemRed
+                    }
+                case .success://(let authDataResult):
+                    DispatchQueue.main.async {
+                        self?.navigateToMainView()
+//                        self?.errorLabel.text = "Hope ypu enjoy our app expirience. Email used: \(authDataResult.user.email ?? "")"
+//                        self?.errorLabel.textColor = .systemGreen
+                    }
+                }
+            }
+        }
+    }
+    
+    private func navigateToMainView() {
+        UIViewController.showViewCintroller(storyboardName: "MainView", viewControllerID: "MainTabBarController")
+    }
   
   private func clearErrorLabel() {
     errorLabel.text = ""
@@ -61,4 +110,5 @@ class LoginViewController: UIViewController {
   }
 
 }
+
 
