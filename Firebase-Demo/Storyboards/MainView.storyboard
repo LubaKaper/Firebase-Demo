@@ -98,13 +98,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yEg-XS-5Ct">
+                                <rect key="frame" x="0.0" y="227" width="414" height="411.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yEg-XS-5Ct" secondAttribute="height" multiplier="1:1" id="wSZ-df-my5"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Bnl-mU-nMe" firstAttribute="leading" secondItem="jdM-TK-ZKl" secondAttribute="leading" constant="20" id="4ib-DG-l2C"/>
+                            <constraint firstItem="yEg-XS-5Ct" firstAttribute="trailing" secondItem="jdM-TK-ZKl" secondAttribute="trailing" id="Eel-Ss-uTd"/>
+                            <constraint firstItem="yEg-XS-5Ct" firstAttribute="leading" secondItem="jdM-TK-ZKl" secondAttribute="leading" id="HgI-fL-Mim"/>
                             <constraint firstItem="ZRg-OE-WYo" firstAttribute="top" secondItem="Bnl-mU-nMe" secondAttribute="bottom" constant="20" id="HoA-mr-dMd"/>
                             <constraint firstItem="jdM-TK-ZKl" firstAttribute="trailing" secondItem="ZRg-OE-WYo" secondAttribute="trailing" constant="20" id="Mgk-qm-EHE"/>
                             <constraint firstItem="ZRg-OE-WYo" firstAttribute="leading" secondItem="jdM-TK-ZKl" secondAttribute="leading" constant="20" id="aq2-50-cPL"/>
+                            <constraint firstItem="yEg-XS-5Ct" firstAttribute="top" secondItem="ZRg-OE-WYo" secondAttribute="bottom" constant="30" id="cJk-Ay-aI6"/>
                             <constraint firstItem="Bnl-mU-nMe" firstAttribute="top" secondItem="jdM-TK-ZKl" secondAttribute="top" constant="20" id="f59-d3-shq"/>
                             <constraint firstItem="jdM-TK-ZKl" firstAttribute="trailing" secondItem="Bnl-mU-nMe" secondAttribute="trailing" constant="20" id="mHX-RN-ouS"/>
                         </constraints>
@@ -118,6 +127,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="itemImageView" destination="yEg-XS-5Ct" id="gQY-8o-fQP"/>
                         <outlet property="itemNameTextField" destination="Bnl-mU-nMe" id="KHC-kp-T9h"/>
                         <outlet property="itemPriceTextField" destination="ZRg-OE-WYo" id="LpW-Jo-1Xu"/>
                     </connections>
@@ -169,6 +179,26 @@
                                     <action selector="updateProfileButtonPressed:" destination="zRv-S7-8mS" eventType="touchUpInside" id="bWD-ep-sjw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLm-U7-drh" customClass="DesignableButton" customModule="Firebase_Demo" customModuleProvider="target">
+                                <rect key="frame" x="275" y="122.5" width="44" height="43"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="42H-3o-va2"/>
+                                    <constraint firstAttribute="width" constant="44" id="gok-fQ-7WV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" backgroundImage="pencil.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="editProfileButtonPressed:" destination="zRv-S7-8mS" eventType="touchUpInside" id="Wis-VG-DGD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xe6-aF-Ej7">
+                                <rect key="frame" x="177" y="493" width="60" height="30"/>
+                                <state key="normal" title="Sing Out"/>
+                                <connections>
+                                    <action selector="singoutButtonPressed:" destination="zRv-S7-8mS" eventType="touchUpInside" id="lg7-Su-yUW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -176,9 +206,13 @@
                             <constraint firstItem="PUD-hw-Dwj" firstAttribute="leading" secondItem="VYt-LS-qbB" secondAttribute="leading" constant="20" id="66H-Ri-8tZ"/>
                             <constraint firstItem="URw-EH-dab" firstAttribute="centerX" secondItem="WIj-j1-eve" secondAttribute="centerX" id="BBc-cl-r9e"/>
                             <constraint firstItem="bem-Fh-Rjb" firstAttribute="leading" secondItem="VYt-LS-qbB" secondAttribute="leading" constant="20" id="Efz-Un-me1"/>
+                            <constraint firstItem="MLm-U7-drh" firstAttribute="centerY" secondItem="URw-EH-dab" secondAttribute="centerY" id="Q0d-UE-5xV"/>
+                            <constraint firstItem="xe6-aF-Ej7" firstAttribute="centerX" secondItem="WIj-j1-eve" secondAttribute="centerX" id="RWh-Ir-lDJ"/>
                             <constraint firstItem="Ycw-IV-g29" firstAttribute="centerX" secondItem="WIj-j1-eve" secondAttribute="centerX" id="Top-Qk-zqK"/>
                             <constraint firstItem="PUD-hw-Dwj" firstAttribute="top" secondItem="bem-Fh-Rjb" secondAttribute="bottom" constant="20" id="UoD-WI-uqP"/>
                             <constraint firstItem="bem-Fh-Rjb" firstAttribute="top" secondItem="URw-EH-dab" secondAttribute="bottom" constant="20" id="cFX-3Y-VdI"/>
+                            <constraint firstItem="MLm-U7-drh" firstAttribute="leading" secondItem="URw-EH-dab" secondAttribute="trailing" constant="8" id="d7S-lr-mvQ"/>
+                            <constraint firstItem="xe6-aF-Ej7" firstAttribute="top" secondItem="Ycw-IV-g29" secondAttribute="bottom" constant="30" id="exP-1d-VqW"/>
                             <constraint firstItem="VYt-LS-qbB" firstAttribute="trailing" secondItem="bem-Fh-Rjb" secondAttribute="trailing" constant="20" id="h4J-eA-Xnu"/>
                             <constraint firstItem="VYt-LS-qbB" firstAttribute="trailing" secondItem="PUD-hw-Dwj" secondAttribute="trailing" constant="20" id="ktp-Ak-6g0"/>
                             <constraint firstItem="URw-EH-dab" firstAttribute="top" secondItem="VYt-LS-qbB" secondAttribute="top" constant="40" id="s2o-uX-Eyz"/>
@@ -199,18 +233,33 @@
         <!--Item Feed-->
         <scene sceneID="kbq-yi-2dB">
             <objects>
-                <viewController id="eQK-a1-gJl" sceneMemberID="viewController">
+                <viewController id="eQK-a1-gJl" customClass="ItemFeedViewController" customModule="Firebase_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Plp-8R-fTd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vzQ-1p-sqg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vzQ-1p-sqg" firstAttribute="bottom" secondItem="mdE-Zp-EuU" secondAttribute="bottom" id="Ghz-at-zen"/>
+                            <constraint firstItem="vzQ-1p-sqg" firstAttribute="top" secondItem="Plp-8R-fTd" secondAttribute="top" id="XT2-gi-Fcd"/>
+                            <constraint firstItem="vzQ-1p-sqg" firstAttribute="trailing" secondItem="mdE-Zp-EuU" secondAttribute="trailing" id="bUa-70-2ZJ"/>
+                            <constraint firstItem="vzQ-1p-sqg" firstAttribute="leading" secondItem="mdE-Zp-EuU" secondAttribute="leading" id="x3x-9Y-ppJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mdE-Zp-EuU"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item Feed" id="gcO-pC-etR"/>
+                    <connections>
+                        <outlet property="tableView" destination="vzQ-1p-sqg" id="nmY-pC-xrX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGQ-WX-cs7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400" y="-879"/>
+            <point key="canvasLocation" x="400.00000000000006" y="-879.24107142857144"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="IgU-bm-8na">
@@ -251,6 +300,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="pencil.circle.fill" catalog="system" width="64" height="60"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="photo.fill" catalog="system" width="64" height="46"/>
     </resources>

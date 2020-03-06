@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,7 +66,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="56d-uf-Nv9">
-                                        <rect key="frame" x="38.5" y="340" width="297.5" height="30"/>
+                                        <rect key="frame" x="18.5" y="340" width="337" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account ? Click" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocH-J6-l7S">
                                                 <rect key="frame" x="0.0" y="0.0" width="225.5" height="30"/>
@@ -75,7 +75,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myv-6L-gtY">
-                                                <rect key="frame" x="239.5" y="0.0" width="58" height="30"/>
+                                                <rect key="frame" x="239.5" y="0.0" width="97.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="SIGNUP">
                                                     <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -93,7 +93,7 @@
                                     <constraint firstItem="56d-uf-Nv9" firstAttribute="centerX" secondItem="AEc-4S-aDd" secondAttribute="centerX" id="9bz-pb-2ob"/>
                                     <constraint firstItem="Iua-Ju-Lie" firstAttribute="centerX" secondItem="AEc-4S-aDd" secondAttribute="centerX" id="Azg-gY-wPg"/>
                                     <constraint firstItem="3XB-YP-0mT" firstAttribute="top" secondItem="lmn-Aw-9DD" secondAttribute="bottom" constant="40" id="CN1-B2-gti"/>
-                                    <constraint firstItem="56d-uf-Nv9" firstAttribute="width" secondItem="AEc-4S-aDd" secondAttribute="width" multiplier="0.795455" id="GJv-sh-12F"/>
+                                    <constraint firstItem="56d-uf-Nv9" firstAttribute="width" secondItem="AEc-4S-aDd" secondAttribute="width" multiplier="0.9" id="GJv-sh-12F"/>
                                     <constraint firstItem="56d-uf-Nv9" firstAttribute="top" secondItem="Iua-Ju-Lie" secondAttribute="bottom" constant="28" id="GWm-vz-VWc"/>
                                     <constraint firstItem="3XB-YP-0mT" firstAttribute="centerX" secondItem="AEc-4S-aDd" secondAttribute="centerX" id="JfO-Q2-0pt"/>
                                     <constraint firstItem="lmn-Aw-9DD" firstAttribute="centerX" secondItem="AEc-4S-aDd" secondAttribute="centerX" id="Pv8-nA-Ece"/>

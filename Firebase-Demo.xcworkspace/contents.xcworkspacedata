@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ItemCell.swift">
+   </FileRef>
+   <FileRef
       location = "group:Firebase-Demo.xcodeproj">
    </FileRef>
    <FileRef

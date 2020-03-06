@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" id="UVY-YH-DGD" customClass="ItemCell" customModule="Firebase_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UVY-YH-DGD" id="eXJ-8N-52k">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DTz-YA-GI7" customClass="DesignableImageView" customModule="Firebase_Demo" customModuleProvider="target">
+                        <rect key="frame" x="20" y="20" width="100" height="101"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="DTz-YA-GI7" secondAttribute="height" multiplier="1:1" id="aS2-oQ-H5N"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJt-4o-ccl">
+                        <rect key="frame" x="128" y="20" width="278" height="33.5"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scz-nt-TLY">
+                        <rect key="frame" x="361.5" y="100.5" width="40.5" height="20.5"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seller name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3N-nz-g03">
+                        <rect key="frame" x="128" y="61.5" width="278" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tho-xa-uaD">
+                        <rect key="frame" x="128" y="90.5" width="258" height="14.5"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="DTz-YA-GI7" firstAttribute="leading" secondItem="eXJ-8N-52k" secondAttribute="leading" constant="20" id="1oz-hq-mlx"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Tho-xa-uaD" secondAttribute="trailing" constant="8" id="3k7-Fg-kvA"/>
+                    <constraint firstItem="r3N-nz-g03" firstAttribute="top" secondItem="wJt-4o-ccl" secondAttribute="bottom" constant="8" id="GDz-L9-bke"/>
+                    <constraint firstAttribute="bottom" secondItem="DTz-YA-GI7" secondAttribute="bottom" constant="20" id="GMq-Sk-gCS"/>
+                    <constraint firstItem="scz-nt-TLY" firstAttribute="trailing" secondItem="eXJ-8N-52k" secondAttribute="trailingMargin" constant="8" id="IlA-kJ-XSc"/>
+                    <constraint firstItem="DTz-YA-GI7" firstAttribute="top" secondItem="eXJ-8N-52k" secondAttribute="top" constant="20" id="PhX-Oz-9JH"/>
+                    <constraint firstItem="r3N-nz-g03" firstAttribute="leading" secondItem="DTz-YA-GI7" secondAttribute="trailing" constant="8" id="VBp-FK-Wny"/>
+                    <constraint firstItem="wJt-4o-ccl" firstAttribute="top" secondItem="eXJ-8N-52k" secondAttribute="top" constant="20" id="d22-9T-bPg"/>
+                    <constraint firstItem="Tho-xa-uaD" firstAttribute="top" secondItem="r3N-nz-g03" secondAttribute="bottom" constant="8" id="dZm-4c-q5E"/>
+                    <constraint firstAttribute="trailing" secondItem="wJt-4o-ccl" secondAttribute="trailing" constant="8" id="fBt-Ch-i5y"/>
+                    <constraint firstItem="wJt-4o-ccl" firstAttribute="leading" secondItem="DTz-YA-GI7" secondAttribute="trailing" constant="8" id="hBi-AA-Vwi"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="scz-nt-TLY" secondAttribute="bottom" constant="8" id="wrj-E1-LiO"/>
+                    <constraint firstItem="Tho-xa-uaD" firstAttribute="leading" secondItem="DTz-YA-GI7" secondAttribute="trailing" constant="8" id="x6J-jg-ctR"/>
+                    <constraint firstAttribute="trailing" secondItem="r3N-nz-g03" secondAttribute="trailing" constant="8" id="z5b-g8-IsZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="Tho-xa-uaD" id="IpH-m6-fcG"/>
+                <outlet property="itemImageView" destination="DTz-YA-GI7" id="17J-Ia-Hlu"/>
+                <outlet property="itemNameLabel" destination="wJt-4o-ccl" id="re7-f4-UuV"/>
+                <outlet property="priceLabel" destination="scz-nt-TLY" id="ExY-Cu-0q4"/>
+                <outlet property="sellerNameLabel" destination="r3N-nz-g03" id="9ES-yN-hd4"/>
+            </connections>
+            <point key="canvasLocation" x="155.07246376811597" y="79.6875"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="tag.fill" catalog="system" width="64" height="58"/>
+    </resources>
+</document>

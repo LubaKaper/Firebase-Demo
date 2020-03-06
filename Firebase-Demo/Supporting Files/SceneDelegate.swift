@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     if let _ = Auth.auth().currentUser { // a user is currently logged in
         UIViewController.showViewCintroller(storyboardName: "MainView", viewControllerID: "MainTabBarController")
     } else { // no logged in user
-        UIViewController.showViewCintroller(storyboardName: "loginView", viewControllerID: "LoginViewController")
+        UIViewController.showViewCintroller(storyboardName: "LoginView", viewControllerID: "LoginViewController")
     }
     
     window?.makeKeyAndVisible()

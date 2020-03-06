@@ -6,13 +6,16 @@ target 'Firebase-Demo' do
   use_frameworks!
 
   # Pods for Firebase-Demo
-	pod 'Firebase/Analytics'
+	#pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   
-  #Database pods
+  #Database pods used to store user's data
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
-  #pod 'Firebase/Storage'
+  #stores media files
+  pod 'Firebase/Storage'
+  #image processing third party library
+  pod 'Kingfisher'
 
   target 'Firebase-DemoTests' do
     inherit! :search_paths
