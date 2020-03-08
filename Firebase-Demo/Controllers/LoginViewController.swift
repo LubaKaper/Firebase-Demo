@@ -70,6 +70,7 @@ class LoginViewController: UIViewController {
                     }
                 case .success://(let authDataResult):
                     DispatchQueue.main.async {
+                        
                         self?.navigateToMainView()
 //                        self?.errorLabel.text = "Hope ypu enjoy our app expirience. Email used: \(authDataResult.user.email ?? "")"
 //                        self?.errorLabel.textColor = .systemGreen
