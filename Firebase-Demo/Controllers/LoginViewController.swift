@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 enum AccountState {
   case existingUser
@@ -26,6 +27,8 @@ class LoginViewController: UIViewController {
   private var accountState: AccountState = .existingUser
     
     private var authSession = AuthenticationSession()
+    
+    private var dataBaseSercice = DatabaseService()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -68,13 +71,31 @@ class LoginViewController: UIViewController {
                         self?.errorLabel.text = "\(error.localizedDescription)"
                         self?.errorLabel.textColor = .systemRed
                     }
-                case .success://(let authDataResult):
-                    DispatchQueue.main.async {
-                        
-                        self?.navigateToMainView()
+                case .success(let authDataResult):
+                    //  Create database user only from new authenticated acount.ONLY WHEN CREATING NEW USER
+                    self?.createDataBaseUser(authDataResult: authDataResult)
+                
+//                    DispatchQueue.main.async {
+//
+//                        self?.navigateToMainView()
 //                        self?.errorLabel.text = "Hope ypu enjoy our app expirience. Email used: \(authDataResult.user.email ?? "")"
 //                        self?.errorLabel.textColor = .systemGreen
-                    }
+                  //  }
+                }
+            }
+        }
+    }
+    
+    private func createDataBaseUser(authDataResult: AuthDataResult ) {
+        dataBaseSercice.createDatbaseUser(authDataResult: authDataResult) { [weak self](result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "account error", message: error.localizedDescription)
+                }
+            case .success:
+                DispatchQueue.main.async {
+                    self?.navigateToMainView()
                 }
             }
         }

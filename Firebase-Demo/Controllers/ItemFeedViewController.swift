@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 class ItemFeedViewController: UIViewController {
     
@@ -16,6 +17,8 @@ class ItemFeedViewController: UIViewController {
     
     private var listener: ListenerRegistration?
     
+    
+    
     private var items = [Item]() {
         didSet {
             DispatchQueue.main.async {
@@ -23,6 +26,7 @@ class ItemFeedViewController: UIViewController {
             }
         }
     }
+    private let databaseService = DatabaseService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +39,14 @@ class ItemFeedViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        // this refreshes the table right away after the change!!!!!!!!
         listener = Firestore.firestore().collection(DatabaseService.itemsCollection).addSnapshotListener({[weak self] (snapshot, error) in
             if let error = error {
                 DispatchQueue.main.async {
                     self?.showAlert(title: "Firestore Error", message: "\(error.localizedDescription)")
                 }
             } else if let snapshot = snapshot {
+                
                 let items = snapshot.documents.map { Item( $0.data())}
                 self?.items = items
                 //print("there are \(snapshot.documents.count) items for sale")
@@ -71,11 +77,50 @@ extension ItemFeedViewController: UITableViewDataSource {
 //        cell.detailTextLabel?.text = "@\(item.sellerName) price: $\(price)"
         return cell
     }
-    //TODO: logout button, Custom cell
+    // gives ability to swipe to delete
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // perform deletion on item
+            let item = items[indexPath.row]
+            databaseService.deleteItem(item: item) { [weak self](result) in
+                switch result {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.showAlert(title: "Deletion error", message: error.localizedDescription)
+                    }
+                case .success:
+                    print("deleted item")
+                }
+            }
+        }
+    }
+    
+    // on the client side meaning the app, we will insure that swipe to delete only works for the user who created the item
+    // thats not enough to only prevent accisdental deletion on the client side, we need to protect the database as well, we will do so using Firebase Security Rules
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        let item = items[indexPath.row]
+        guard let user = Auth.auth().currentUser else {
+            return false
+        }
+        if item.sellerId != user.uid {
+            return false// cannot swipe on row to delete
+        }
+        return true// able to swipe to dselete item
+    }
     
 }
 extension ItemFeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = items[indexPath.row]
+        let storyboard = UIStoryboard(name: "MainView", bundle: nil)
+        let detailVC = storyboard.instantiateViewController(identifier: "ItemDetailViewController") { (coder) in
+            return ItemDetailViewController(coder: coder, item: item)
+        }
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }

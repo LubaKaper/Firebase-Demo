@@ -31,6 +31,11 @@
 		8D725FB3240D779A000F7201 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D725FB2240D779A000F7201 /* CategoryModel.swift */; };
 		8D725FB5240D7B97000F7201 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D725FB4240D7B97000F7201 /* ItemModel.swift */; };
 		8D725FB7240D7E63000F7201 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D725FB6240D7E63000F7201 /* DatabaseService.swift */; };
+		8D77A3C6241BD1B3008CE2CC /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77A3C5241BD1B3008CE2CC /* Favorite.swift */; };
+		8D81BC0424196A6A00FC1F2B /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81BC0324196A6A00FC1F2B /* ItemDetailViewController.swift */; };
+		8D81BC06241973A900FC1F2B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81BC05241973A900FC1F2B /* HeaderView.swift */; };
+		8D81BC0824198F8000FC1F2B /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81BC0724198F8000FC1F2B /* Comment.swift */; };
+		8DA69B02241A963E005A5EA8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA69B01241A963D005A5EA8 /* Constants.swift */; };
 		8DBCC413240FFDF600389A39 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBCC412240FFDF500389A39 /* ItemCell.xib */; };
 		8DBCC4152410001400389A39 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBCC4142410001400389A39 /* ItemCell.swift */; };
 		8DBCC41824100B0200389A39 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBCC41724100B0200389A39 /* UIImage+Extensions.swift */; };
@@ -79,6 +84,11 @@
 		8D725FB2240D779A000F7201 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		8D725FB4240D7B97000F7201 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		8D725FB6240D7E63000F7201 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		8D77A3C5241BD1B3008CE2CC /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		8D81BC0324196A6A00FC1F2B /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		8D81BC05241973A900FC1F2B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		8D81BC0724198F8000FC1F2B /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		8DA69B01241A963D005A5EA8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8DBCC412240FFDF500389A39 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		8DBCC4142410001400389A39 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		8DBCC41724100B0200389A39 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
@@ -180,6 +190,7 @@
 				8D725FAF240D757A000F7201 /* CategoryCell.swift */,
 				8DBCC412240FFDF500389A39 /* ItemCell.xib */,
 				8DBCC4142410001400389A39 /* ItemCell.swift */,
+				8D81BC05241973A900FC1F2B /* HeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +204,7 @@
 				8D725FA5240D5F4B000F7201 /* SellItemViewController.swift */,
 				8D725FA7240D5F60000F7201 /* ProfileViewController.swift */,
 				8D725FA9240D5F75000F7201 /* CreateItemViewController.swift */,
+				8D81BC0324196A6A00FC1F2B /* ItemDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -233,6 +245,9 @@
 			children = (
 				8D725FB2240D779A000F7201 /* CategoryModel.swift */,
 				8D725FB4240D7B97000F7201 /* ItemModel.swift */,
+				8D81BC0724198F8000FC1F2B /* Comment.swift */,
+				8DA69B01241A963D005A5EA8 /* Constants.swift */,
+				8D77A3C5241BD1B3008CE2CC /* Favorite.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -419,21 +434,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D725FB7240D7E63000F7201 /* DatabaseService.swift in Sources */,
+				8D81BC0824198F8000FC1F2B /* Comment.swift in Sources */,
 				8D725FA4240D5F34000F7201 /* ItemFeedViewController.swift in Sources */,
 				8DBCC4152410001400389A39 /* ItemCell.swift in Sources */,
 				57845AD124092D4300F35651 /* LoginViewController.swift in Sources */,
 				8D725FA8240D5F60000F7201 /* ProfileViewController.swift in Sources */,
 				8DBCC41A24100DDA00389A39 /* StorageService.swift in Sources */,
 				8D725FB0240D757A000F7201 /* CategoryCell.swift in Sources */,
+				8D81BC06241973A900FC1F2B /* HeaderView.swift in Sources */,
 				57845ACD24092D4300F35651 /* AppDelegate.swift in Sources */,
+				8D81BC0424196A6A00FC1F2B /* ItemDetailViewController.swift in Sources */,
 				57845AF124092DBB00F35651 /* GradientView.swift in Sources */,
 				8D725FAA240D5F75000F7201 /* CreateItemViewController.swift in Sources */,
+				8DA69B02241A963E005A5EA8 /* Constants.swift in Sources */,
 				8D725FA6240D5F4B000F7201 /* SellItemViewController.swift in Sources */,
 				8D725FA2240D5F15000F7201 /* MainTabBarController.swift in Sources */,
 				57845AF324092DDC00F35651 /* DesignableView.swift in Sources */,
 				8D725FB5240D7B97000F7201 /* ItemModel.swift in Sources */,
 				8D4F3EC124097546002A347F /* AuthenticationSession.swift in Sources */,
 				8D725FAE240D5FE4000F7201 /* UIViewController+Alerts.swift in Sources */,
+				8D77A3C6241BD1B3008CE2CC /* Favorite.swift in Sources */,
 				8D725FAC240D5FA5000F7201 /* UIVieeController+Navigation.swift in Sources */,
 				8DBCC41824100B0200389A39 /* UIImage+Extensions.swift in Sources */,
 				8D725FB3240D779A000F7201 /* CategoryModel.swift in Sources */,
